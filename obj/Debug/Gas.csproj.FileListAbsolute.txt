@@ -1,0 +1,7 @@
+E:\ĐỒ ÁN 1\DOAN1\Gas\Gas\bin\Debug\Gas.exe.config
+E:\ĐỒ ÁN 1\DOAN1\Gas\Gas\bin\Debug\Gas.exe
+E:\ĐỒ ÁN 1\DOAN1\Gas\Gas\bin\Debug\Gas.pdb
+E:\ĐỒ ÁN 1\DOAN1\Gas\Gas\obj\Debug\Gas.csprojAssemblyReference.cache
+E:\ĐỒ ÁN 1\DOAN1\Gas\Gas\obj\Debug\Gas.csproj.CoreCompileInputs.cache
+E:\ĐỒ ÁN 1\DOAN1\Gas\Gas\obj\Debug\Gas.exe
+E:\ĐỒ ÁN 1\DOAN1\Gas\Gas\obj\Debug\Gas.pdb

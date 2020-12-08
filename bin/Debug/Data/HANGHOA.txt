@@ -1,0 +1,4 @@
+
+2	Gas Shell	100	50
+3	Petrolimex 	100	39
+4	gas Total	150	66
