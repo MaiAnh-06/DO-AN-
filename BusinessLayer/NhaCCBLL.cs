@@ -28,40 +28,7 @@ namespace GAS.BusinessLayer
             else
                 throw new Exception("Du lieu sai!");
         }
-        //public bool KiemTra(int mancc)
-        //{
-        //    List<NCC> list = NCCDA.GetData();
-        //    Node<NCC> NB = list.L;
-        //    bool kt = false;
-        //    while (NB != null)
-        //    {
-        //        if (NB.Info.mancc == mancc)
-        //        {
-        //            kt = true;
-        //            break;
-        //        }
-        //        else
-        //            NB = NB.Link;
-        //    }
-        //    return kt;
-        //}
-        //public bool KiemTraTen(string tenncc)
-        //{
-        //    List<NCC> list = NCCDA.GetData();
-        //    Node<NCC> NB = list.L;
-        //    bool kt = false;
-        //    while (NB != null)
-        //    {
-        //        if (NB.Info.tenncc == tenncc)
-        //        {
-        //            kt = true;
-        //            break;
-        //        }
-        //        else
-        //            NB = NB.Link;
-        //    }
-        //    return kt;
-        //}
+
         public void XoaNhaCC(int mancc)
         {
             int i;
@@ -110,31 +77,49 @@ namespace GAS.BusinessLayer
         public List<NCC> TimNhaCC(NCC nc)
         {
             List<NCC> list = NCCDA.GetData();
-            List<NCC> KQ = new List<NCC>();
-
-            //Tìm theo mã
-            if (nc.mancc != 0 && nc.tenncc == null && nc.diachi == null && nc.sdt == null)
+            List<NCC> MH = new List<NCC>();
+            if ((nc.mancc) == 0 && string.IsNullOrEmpty(nc.tenncc) && string.IsNullOrEmpty(nc.diachi) && string.IsNullOrEmpty(nc.sdt) )
             {
-                for (int i = 0; i < list.Count; ++i)
-                    if (list[i].mancc == nc.mancc)
-                    {
-                        KQ.Add(new NCC(list[i]));
-                    }
+                MH = list;
             }
-            else if (nc.mancc == 0 && nc.tenncc != null)
+            if ((nc.mancc) == 0)
             {
                 for (int i = 0; i < list.Count; i++)
                 {
-                    if (list[i].tenncc == nc.tenncc)
+                    if (list[i].mancc == (nc.mancc))
+
+                        MH.Add(new NCC(list[i]));
+                }
+            }
+
+            else if (!string.IsNullOrEmpty(nc.tenncc))
+            {
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (list[i].tenncc.IndexOf(nc.tenncc) >= 0)
                     {
-                        KQ.Add(new NCC(list[i]));
+                        MH.Add(new NCC(list[i]));
                     }
                 }
             }
-            else KQ = null;
-            return KQ;
+            else if (!string.IsNullOrEmpty(nc.sdt))
+            {
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (list[i].tenncc.IndexOf(nc.sdt) >= 0)
+                    {
+                        MH.Add(new NCC(list[i]));
+                    }
+                }
+            }
+            return MH;
         }
     }
-
 }
+
+       
+      
+  
+
+
 

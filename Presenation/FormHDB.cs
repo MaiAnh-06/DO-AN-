@@ -20,11 +20,13 @@ namespace GAS.Presenation
             HoaDonBan hdb = new HoaDonBan();
             Console.Write("Nhap ma hoa don ban:"); hdb.mahdb = int.Parse(Console.ReadLine());
             Console.Write("Nhap ma nhan vien ban :"); hdb.manvban = int.Parse(Console.ReadLine());
+            Console.Write("Nhap ten nhan vien giao:"); hdb.
             Console.Write("Nhap ngay ban :"); hdb.ngayban = Console.ReadLine();
             Console.Write("Nhap ma hang  :"); hdb.mahang = int.Parse(Console.ReadLine());
             Console.Write("Nhap so luong  :"); hdb.soluong = int.Parse(Console.ReadLine());
             Console.Write(" Nhap gia ban   :"); hdb.giaban = double.Parse(Console.ReadLine());
             Console.Write("Nhap ten khach hang:"); hdb.kh = Console.ReadLine();
+
 
             hoadonban.ThemHoaDonBan(hdb);
         }
@@ -106,7 +108,7 @@ namespace GAS.Presenation
                 List<HoaDonBan> hdb= hoadonban.TimHoaDonBan(new HoaDonBan(list[i]));
                 foreach (var x in hdb)
 
-                    Console.WriteLine(x.mahdb + "\t" + x.manvban + "\t" + x.ngayban+ "\t" + x.mahang + "\t" + x.soluong+"\t"+x.giaban+"\t"+x.kh+"\t"+x.thanhtien);
+                    Console.WriteLine(x.mahdb +  x.manvban + x.ngayban+ "\t" + x.mahang + "\t" + x.soluong+"\t"+x.giaban+"\t"+x.kh+"\t"+x.thanhtien);
             }
 
             else Console.WriteLine("Thong tin hoa don  nay k ton tai");

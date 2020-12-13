@@ -14,6 +14,6 @@ namespace Gas.BusinessLayer
         void XoaNhanVien(int manv);
         void SuaNhanVien(NhanVien nv);
         NhanVien LayNhanVien(int manv);
-        List<NhanVien> TimNhanVien(NhanVien NV);
+        List<NhanVien> TimNhanVien(NhanVien nv);
     }
 }

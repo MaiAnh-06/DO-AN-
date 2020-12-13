@@ -88,6 +88,26 @@ namespace GAS.Presenation
             }
 
         }
+        public void TimKiem()
+        {
+            Console.Clear();
+            Console.WriteLine("TIM KIEM NHA CUNG CAP");
+            List<NCC> list = nhacc.XemDSNhaCC();
+
+            Console.WriteLine("Nhap thong tin nha cung cap can tim kiem"); string tt = Console.ReadLine();
+            int i = 0;
+            for (i = 0; i < list.Count; i++)
+                if (list[i].tenncc == tt || list[i].diachi == tt || list[i].sdt== tt) break;
+            if (i < list.Count)
+            {
+                List<NCC> nc = nhacc.TimNhaCC(new NCC(list[i]));
+                foreach (var x in nc)
+
+                    Console.WriteLine(x.mancc + "\t" + x.tenncc + "\t" + x.diachi + "\t" + x.sdt+ "\t" );
+            }
+
+            else Console.WriteLine("Thong tin nha cung cap k ton tai");
+        }
         public void Menu()
         {
             do
@@ -127,6 +147,11 @@ namespace GAS.Presenation
                     case 2:
                         Sua();
                         Hien();
+                        Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                        Console.ReadKey();
+                        break;
+                    case 5:
+                        TimKiem();
                         Console.WriteLine("Nhap phim bat ky de tiep tuc...");
                         Console.ReadKey();
                         break;

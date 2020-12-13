@@ -102,13 +102,13 @@ namespace GAS.Presenation
                 if (list[i].tenhang == mm ) break;
             if (i < list.Count)
             {
-                List<HangHoa> hangs = hanghoa.TimHangHoa(new HangHoa(list[i]));
-                foreach (var x in hangs)
+                List<HangHoa> HH = hanghoa.TimHangHoa(new HangHoa(list[i]));
+                foreach (var x in HH)
 
                     Console.WriteLine(x.mahh + "\t" + x.tenhang + "\t" + x.slnhapve + "\t" + x.slhienco);
             }
 
-            else Console.WriteLine("Thong tin hang  nay k ton tai");
+            else Console.WriteLine("Thong tin hang hoa nay khong  ton tai");
         }
         public void Menu()
         {

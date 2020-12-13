@@ -111,29 +111,33 @@ namespace GAS.BusinessLayer
         public List<HangHoa> TimHangHoa(HangHoa HH)
         {
             List<HangHoa> list = HHDA.GetData();
-            List<HangHoa> KQ = new List<HangHoa>();
+            List<HangHoa> MH = new List<HangHoa>();
 
-            //Tìm theo mã
-            if (HH.mahh != 0 && HH.tenhang == null)
+            if ((HH.mahh) == 0 && string.IsNullOrEmpty(HH.tenhang) && (HH.slhienco)==0 &&(HH.slnhapve)==0 )
             {
-                for (int i = 0; i < list.Count; ++i)
-                    if (list[i].mahh == HH.mahh)
-                    {
-                        KQ.Add(new HangHoa(list[i]));
-                    }
+                MH = list;
             }
-            else if (HH.mahh == 0 && HH.tenhang != null)
+            if ((HH.mahh) == 0)
             {
                 for (int i = 0; i < list.Count; i++)
                 {
-                    if (list[i].tenhang == HH.tenhang)
+                    if (list[i].mahh == (HH.mahh))
+
+                        MH.Add(new HangHoa(list[i]));
+                }
+            }
+
+            else if (!string.IsNullOrEmpty(HH.tenhang))
+            {
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (list[i].tenhang.IndexOf(HH.tenhang) >= 0)
                     {
-                        KQ.Add(new HangHoa(list[i]));
+                        MH.Add(new HangHoa(list[i]));
                     }
                 }
             }
-            else KQ = null;
-            return KQ;
+            return MH;
         }
     }
 
