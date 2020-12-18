@@ -15,12 +15,13 @@ namespace GAS.Presenation
         public void Nhap()
         {
             Console.Clear();
-            Console.WriteLine("NHAP THONG TIN HANG HOA");
+            Console.WriteLine("");
+            Console.WriteLine("\t\t\tNHẬP THÔNG TIN HÀNG HÓA ");
             HangHoa hh = new HangHoa();
-            Console.Write("Nhap ma hang hoa:"); hh.mahh = int.Parse(Console.ReadLine());
-            Console.Write("Nhap ten hang hoa:"); hh.tenhang = Console.ReadLine();
-            Console.Write("Nhap so luong nhap ve:"); hh.slnhapve = int.Parse(Console.ReadLine());
-            Console.Write("Nhap so luong hien co:"); hh.slhienco = int.Parse(Console.ReadLine());
+            Console.Write("\t\tNhập mã hàng hóa :"); hh.mahh = int.Parse(Console.ReadLine());
+            Console.Write("\t\tNhập tên hàng hóa:"); hh.tenhang = Console.ReadLine();
+            Console.Write("\t\tSố lượng nhập về:"); hh.slnhapve = int.Parse(Console.ReadLine());
+            Console.Write("\t\tSố lượng hiện có :"); hh.slhienco = int.Parse(Console.ReadLine());
             
             hanghoa.ThemHangHoa(hh);
         }
@@ -29,7 +30,7 @@ namespace GAS.Presenation
             Console.Clear();
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine("\t\t\t\t\t HIEN THI THONG TIN HANG HOA");
+            Console.WriteLine("\t\t\t\t\t HIỂN THỊ THÔNG TIN HÀNG HÓA ");
             Console.WriteLine();
             List<HangHoa> list = hanghoa.XemDSHangHoa();
             foreach (var hh in list)
@@ -38,10 +39,10 @@ namespace GAS.Presenation
         public void Sua()
         {
             Console.Clear();
-            Console.WriteLine("SUA THONG TIN HANG HOA");
+            Console.WriteLine("\t\t\tSỬA THÔNG TIN HÀNG HÓA ");
             List<HangHoa> list = hanghoa.XemDSHangHoa();
             int mahh;
-            Console.Write("Nhap ma hang hoa can sua:");
+            Console.Write("\t\tNhập mã hàng hóa cần sửa :");
             mahh = int.Parse(Console.ReadLine());
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -50,10 +51,10 @@ namespace GAS.Presenation
             if (i < list.Count)
             {
                 HangHoa sp = new HangHoa(list[i]);
-                Console.Write("Nhap ten hang moi:");
+                Console.Write("\t\tNhập tên hàng mới :");
                 string tenhang = Console.ReadLine();
                 if (!string.IsNullOrEmpty(tenhang)) sp.tenhang = tenhang;
-                Console.Write("So luong nhap ve:");
+                Console.Write("\t\tSố lượng nhập về :");
                 int SL = int.Parse(Console.ReadLine());
 
             }
@@ -65,10 +66,11 @@ namespace GAS.Presenation
         public void Xoa()
         {
             Console.Clear();
-            Console.WriteLine("Xóa THÔNG TIN HANG HOA");
+            Console.WriteLine();
+            Console.WriteLine("\t\tXÓA THÔNG TIN HÀNG HÓA ");
             List<HangHoa> list = hanghoa.XemDSHangHoa();
             int mahh;
-            Console.Write("Nhập mã hang cần xóa:");
+            Console.Write("\tNhập mã hàng cần xóa:");
             mahh = int.Parse(Console.ReadLine());
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -86,17 +88,17 @@ namespace GAS.Presenation
             }
             else
             {
-                Console.WriteLine("Không tồn tại mã hang này");
+                Console.WriteLine("Không tồn tại mã hàng  này");
             }
 
         }
         public void TimKiem()
         {
             Console.Clear();
-            Console.WriteLine("TIM KIEM HANG HOA");
+            Console.WriteLine("\t\tTÌM KIẾM HÀNG HÓA ");
             List<HangHoa> list = hanghoa.XemDSHangHoa();
 
-            Console.WriteLine("Nhap thong tin hang hoa can tim kiem"); string mm = Console.ReadLine();
+            Console.WriteLine("\tNhập tên hàng hóa cần tìm kiếm: "); string mm = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; i++)
                 if (list[i].tenhang == mm ) break;
@@ -108,7 +110,7 @@ namespace GAS.Presenation
                     Console.WriteLine(x.mahh + "\t" + x.tenhang + "\t" + x.slnhapve + "\t" + x.slhienco);
             }
 
-            else Console.WriteLine("Thong tin hang hoa nay khong  ton tai");
+            else Console.WriteLine("Thông tin mặt hàng này không tồn tại");
         }
         public void Menu()
         {
@@ -116,15 +118,15 @@ namespace GAS.Presenation
             {
                 Console.Clear();
                 Console.WriteLine("\t\t\t\t\t****************************************************\t\t\t");
-                Console.WriteLine("\t\t\t\t\t*         QUAN LY THONG TIN HANG HOA               *\t\t\t");
-                Console.WriteLine("\t\t\t\t\t*             1.Nhap Hang Hoa                      *\t\t\t");
-                Console.WriteLine("\t\t\t\t\t*             2.Sua Hang Hoa                       *\t\t\t");
-                Console.WriteLine("\t\t\t\t\t*             3.Xoa hang hoa                       *\t\t\t");
-                Console.WriteLine("\t\t\t\t\t*             4.Hien danh sach                     *\t\t\t");
-                Console.WriteLine("\t\t\t\t\t*             5.Tim kiem                           *\t\t\t");
+                Console.WriteLine("\t\t\t\t\t*          QUẢN LÝ THÔNG TIN HÀNG HÓA              *\t\t\t");
+                Console.WriteLine("\t\t\t\t\t*             1.Nhập hàng hóa                      *\t\t\t");
+                Console.WriteLine("\t\t\t\t\t*             2.Sửa hàng hóa                       *\t\t\t");
+                Console.WriteLine("\t\t\t\t\t*             3.Xóa hàng hóa                       *\t\t\t");
+                Console.WriteLine("\t\t\t\t\t*             4.Hiện danh sách hàng hóa            *\t\t\t");
+                Console.WriteLine("\t\t\t\t\t*             5.Tìm kiếm                           *\t\t\t");
                 Console.WriteLine("\t\t\t\t\t*             6.Back                               *\t\t\t");
                 Console.WriteLine("\t\t\t\t\t****************************************************\t\t\t");
-                Console.WriteLine("Chon chuc nang:");
+                Console.WriteLine("Chọn chức năng :");
                 
                 int n =int.Parse( Console.ReadLine());
                 switch (n)

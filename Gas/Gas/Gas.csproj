@@ -45,16 +45,20 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\HangHoaBLL.cs" />
     <Compile Include="BusinessLayer\HoaDonBanBLL.cs" />
+    <Compile Include="BusinessLayer\HoaDonNhapBLL.cs" />
     <Compile Include="BusinessLayer\Interface\IFHangHoaBLL.cs" />
     <Compile Include="BusinessLayer\Interface\IFHoaDonBanBLL.cs" />
+    <Compile Include="BusinessLayer\Interface\IFHoaDonNhapBLL.cs" />
     <Compile Include="BusinessLayer\Interface\IFNhaCCBLL.cs" />
     <Compile Include="BusinessLayer\Interface\IFNhanVienBLL.cs" />
     <Compile Include="BusinessLayer\NhaCCBLL.cs" />
     <Compile Include="BusinessLayer\NhanVienBLL.cs" />
     <Compile Include="DataAccessLayer\HangHoaDAL.cs" />
     <Compile Include="DataAccessLayer\HoaDonBanDAL.cs" />
+    <Compile Include="DataAccessLayer\HoaDonNhapDAL.cs" />
     <Compile Include="DataAccessLayer\Interface\IDHangHoaDAL.cs" />
     <Compile Include="DataAccessLayer\Interface\IDHoaDonBanDAL.cs" />
+    <Compile Include="DataAccessLayer\Interface\IDHoaDonNhapDAL.cs" />
     <Compile Include="DataAccessLayer\Interface\IDNhaCCDAL.cs" />
     <Compile Include="DataAccessLayer\Interface\IDNhanVienDAL.cs" />
     <Compile Include="DataAccessLayer\NhaCCDAL.cs" />

@@ -14,7 +14,7 @@ namespace Gas.Entites
         private int MaHang;
         private int SoLuong;
         private double GiaBan;
-        private string DonViTinh;
+        private string TenKH;
         private double ThanhTien;
         public HoaDonBan()
         {
@@ -24,10 +24,10 @@ namespace Gas.Entites
             MaHang = 0;
             SoLuong = 0;
             GiaBan = 0;
-            DonViTinh = "";
+            TenKH = "";
             ThanhTien = 0;
         }
-        public HoaDonBan(int mahdb, int manvban, string ngayban, int mh, int soluong, double giaban, string donvi, double thanhtien)
+        public HoaDonBan(int mahdb, int manvban, string ngayban, int mh, int soluong, double giaban, string kh, double thanhtien)
         {
             this.MaHDB = mahdb;
             this.MaNVBan = manvban;
@@ -35,7 +35,7 @@ namespace Gas.Entites
             this.MaHang = mh;
             this.SoLuong = soluong;
             this.GiaBan = giaban;
-            this.DonViTinh = donvi;
+            this.TenKH = kh;
             this.ThanhTien = thanhtien;
         }
         //Hàm sao chép
@@ -44,10 +44,11 @@ namespace Gas.Entites
             this.MaHDB = hdb.mahdb;
             this.MaNVBan = hdb.manvban;
             this.NgayBan = hdb.ngayban;
+
             this.MaHang = hdb.mahang;
             this.SoLuong = hdb.soluong;
             this.GiaBan = hdb.giaban;
-            this.DonViTinh = hdb.donvi;
+            this.TenKH = hdb.kh;
             this.ThanhTien = hdb.thanhtien;
         }
         public int mahdb
@@ -122,16 +123,16 @@ namespace Gas.Entites
                     GiaBan = value;
             }
         }
-        public string donvi
+        public string kh
         {
             get
             {
-                return DonViTinh;
+                return TenKH;
             }
             set
             {
                 if (value != "")
-                    DonViTinh = value;
+                    TenKH = value;
             }
         }
         public double thanhtien

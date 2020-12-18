@@ -20,7 +20,7 @@ namespace GAS.Presenation
             HoaDonBan hdb = new HoaDonBan();
             Console.Write("Nhap ma hoa don ban:"); hdb.mahdb = int.Parse(Console.ReadLine());
             Console.Write("Nhap ma nhan vien ban :"); hdb.manvban = int.Parse(Console.ReadLine());
-            Console.Write("Nhap ten nhan vien giao:"); hdb.
+            
             Console.Write("Nhap ngay ban :"); hdb.ngayban = Console.ReadLine();
             Console.Write("Nhap ma hang  :"); hdb.mahang = int.Parse(Console.ReadLine());
             Console.Write("Nhap so luong  :"); hdb.soluong = int.Parse(Console.ReadLine());

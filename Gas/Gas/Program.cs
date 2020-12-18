@@ -19,13 +19,13 @@ namespace GAS
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine("\t\t\t\t************************************************************\t\t\t");
-                Console.WriteLine("\t\t\t\t*                     QUAN LY BAN GAS                      *\t\t\t");
-                Console.WriteLine("\t\t\t\t*                 1.Quan ly hang hoa                       *\t\t\t");
-                Console.WriteLine("\t\t\t\t*                 2.Quan ly nha cung cap                   *\t\t\t");
-                Console.WriteLine("\t\t\t\t*                 3.Quan ly nhan vien                      *\t\t\t");
-                Console.WriteLine("\t\t\t\t*                 4.Quan ly hoa don nhap                   *\t\t\t");
-                Console.WriteLine("\t\t\t\t*                 5.Quan ly hoa don ban                    *\t\t\t");
-                Console.WriteLine("\t\t\t\t*                 6.Ket thuc                               *\t\t\t");
+                Console.WriteLine("\t\t\t\t*                     QUẢN LÝ BÁN GAS                      *\t\t\t");
+                Console.WriteLine("\t\t\t\t*                 1.Quản lý Hàng hóa                       *\t\t\t");
+                Console.WriteLine("\t\t\t\t*                 2.Quản lý Nhà cung cấp                   *\t\t\t");
+                Console.WriteLine("\t\t\t\t*                 3.Quản lý Nhân viên                      *\t\t\t");
+                Console.WriteLine("\t\t\t\t*                 4.Quản lý Hóa đơn Nhập                   *\t\t\t");
+                Console.WriteLine("\t\t\t\t*                 5.Quản lý Hóa đơn Bán                    *\t\t\t");
+                Console.WriteLine("\t\t\t\t*                 6.Kết Thúc                               *\t\t\t");
                 Console.WriteLine("\t\t\t\t************************************************************\t\t\t");
                 Console.WriteLine("Chon thong tin:");
                 int n = int.Parse(Console.ReadLine());
@@ -62,6 +62,8 @@ namespace GAS
 
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding = Encoding.Unicode;
             Menu();
         }
     }

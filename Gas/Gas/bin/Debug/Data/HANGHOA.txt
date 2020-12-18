@@ -1,0 +1,4 @@
+1457	gas cong nghiep	50	41
+1879	gas du lich	200	90
+1099	Gas Total	90	34
+1906	Gas Petrolimex	150	109
