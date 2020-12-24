@@ -39,10 +39,10 @@ namespace GAS.DataAccessLayer
         //Chèn một bản ghi nhân viên vào tệp
         public void Insert(HangHoa HH)
         {
-            int mah = HH.mahh + 1;
+            
             StreamWriter fwrite = File.AppendText(txtfile1);
             fwrite.WriteLine();
-            fwrite.Write(mah + "\t" + HH.tenhang + "\t" + HH.slnhapve + "\t" + HH.slhienco);
+            fwrite.Write(HH.mahh+ "\t" + HH.tenhang + "\t" + HH.slnhapve + "\t" + HH.slhienco);
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp
@@ -53,6 +53,7 @@ namespace GAS.DataAccessLayer
                 fwrite.WriteLine(list[i].mahh + "\t" + list[i].tenhang + "\t" + list[i].slnhapve + "\t" + list[i].slhienco);
             fwrite.Close();
         }
+       
     }
 }
 

@@ -54,7 +54,7 @@ namespace GAS.BusinessLayer
             if (i < list.Count)
             {
                 list.RemoveAt(i);
-
+                list.Add(nc);
                 NCCDA.Update(list);
             }
             else

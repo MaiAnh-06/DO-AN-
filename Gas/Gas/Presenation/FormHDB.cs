@@ -16,16 +16,15 @@ namespace GAS.Presenation
         public void Nhap()
         {
             Console.Clear();
-            Console.WriteLine("NHAP THONG TIN HOA DON BAN");
+            Console.WriteLine("NHẬP THÔNG TIN HÓA ĐƠN BÁN");
             HoaDonBan hdb = new HoaDonBan();
-            Console.Write("Nhap ma hoa don ban:"); hdb.mahdb = int.Parse(Console.ReadLine());
-            Console.Write("Nhap ma nhan vien ban :"); hdb.manvban = int.Parse(Console.ReadLine());
-            
-            Console.Write("Nhap ngay ban :"); hdb.ngayban = Console.ReadLine();
-            Console.Write("Nhap ma hang  :"); hdb.mahang = int.Parse(Console.ReadLine());
-            Console.Write("Nhap so luong  :"); hdb.soluong = int.Parse(Console.ReadLine());
-            Console.Write(" Nhap gia ban   :"); hdb.giaban = double.Parse(Console.ReadLine());
-            Console.Write("Nhap ten khach hang:"); hdb.kh = Console.ReadLine();
+            Console.Write("Nhập mã hóa đơn bán:"); hdb.mahdb = int.Parse(Console.ReadLine());
+            Console.Write("Nhap mã nhân viên bán :"); hdb.manvban = int.Parse(Console.ReadLine());
+            Console.Write("Nhập ngày bán :"); hdb.ngayban = Console.ReadLine();
+            Console.Write("Nhập mã hàng  :"); hdb.mahang = int.Parse(Console.ReadLine());
+            Console.Write("Nhập số lượng  :"); hdb.soluong = int.Parse(Console.ReadLine());
+            Console.Write(" Nhập giá bán   :"); hdb.giaban = double.Parse(Console.ReadLine());
+            Console.Write("Nhập tên khách hàng:"); hdb.kh = Console.ReadLine();
 
 
             hoadonban.ThemHoaDonBan(hdb);
@@ -33,18 +32,20 @@ namespace GAS.Presenation
         public void Hien()
         {
             Console.Clear();
-            Console.WriteLine("\t\t\t\t HIEN THI THONG TIN HOA DON BAN");
+            Console.WriteLine("\t\t\t\t HIỂN THỊ THÔNG TIN HÓA ĐƠN BÁN");
+            Console.WriteLine();
+            Console.WriteLine("{0,10}|{1,10}|{2,10}|{3,10}|{4,10}|{5,10}|{6,10}|{7,10}", "Ma HDB", "Ma NV ban", "Ngay Ban","Mã Hàng ","Số Lượng","Giá Bán","Tên khách" ,"Thành Tiền ");
             List<HoaDonBan> list = hoadonban.XemDSHoaDonBan();
             foreach (var hdb in list)
-                Console.WriteLine(hdb.mahdb + "\t\t" + hdb.manvban + "\t\t" + hdb.ngayban + "\t\t" + hdb.mahang + "\t\t" + hdb.soluong + "\t\t" + hdb.giaban + "\t\t" + hdb.kh + "\t\t" + hdb.thanhtien);
+                Console.WriteLine("{0,10}|{1,10}|{2,10}|{3,10}|{4,10}|{5,10}|{6,10}|{7,10}", hdb.mahdb , hdb.manvban ,hdb.ngayban , hdb.mahang , hdb.soluong , hdb.giaban ,hdb.kh ,hdb.thanhtien);
         }
         public void Sua()
         {
             Console.Clear();
-            Console.WriteLine("SUA THONG TIN HOA DON BAN");
+            Console.WriteLine("SỬA THÔNG TIN HÓA ĐƠN BÁN ");
             List<HoaDonBan> list = hoadonban.XemDSHoaDonBan();
             int mahdb;
-            Console.Write("Nhap ma hang don can sua :");
+            Console.Write("Nhập mã hóa đơn bán  cần sửa  :");
             mahdb = int.Parse(Console.ReadLine());
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -52,12 +53,27 @@ namespace GAS.Presenation
 
             if (i < list.Count)
             {
-                HoaDonBan mh = new HoaDonBan(list[i]);
-                Console.Write("Nhap ten hang can sua:");
-                int mahang =int.Parse( Console.ReadLine());
-               
-                Console.Write("So luong nhap ve:");
+                HoaDonBan hd1 = new HoaDonBan(list[i]);
+                Console.Write("Nhập mã nhân viên bán mới :");
+                int nvb =int.Parse( Console.ReadLine());
+                if (nvb > 0) hd1.manvban= nvb;
+                Console.Write("\t\tNhập ngày bán  mới :");
+                string nb = Console.ReadLine();
+                if (!string.IsNullOrEmpty(nb)) hd1.ngayban = nb;
+                Console.Write("Nhập mã hàng cần sửa :");
+                int mh = int.Parse(Console.ReadLine());
+                if (mh > 0) hd1.mahang = mh;
+                Console.Write("\t\tSố lượng mới :");
                 int SL = int.Parse(Console.ReadLine());
+                if (SL > 0) hd1.soluong = SL;
+                Console.Write("Nhập giá bán mới:");
+                int gb= int.Parse(Console.ReadLine());
+                if (gb > 0) hd1.giaban = gb;
+                Console.Write("\t\tNhập tên khách  mới :");
+                string tk = Console.ReadLine();
+                if (!string.IsNullOrEmpty(tk)) hd1.kh = tk;
+                hoadonban.SuaHoaDonBan(hd1);
+
 
             }
             else
@@ -68,10 +84,10 @@ namespace GAS.Presenation
         public void Xoa()
         {
             Console.Clear();
-            Console.WriteLine("Xóa THÔNG TIN HOA DON BAN ");
+            Console.WriteLine("XÓA THÔNG TIN HÓA ĐƠN BÁN ");
             List<HoaDonBan> list = hoadonban.XemDSHoaDonBan();
             int mahdb;
-            Console.Write("Nhập mã hoa don  cần xóa:");
+            Console.Write("Nhập mã hóa đơn bán cần xóa:");
             mahdb= int.Parse(Console.ReadLine());
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -96,10 +112,10 @@ namespace GAS.Presenation
         public void TimKiem()
         {
             Console.Clear();
-            Console.WriteLine("Tim kiem hoa don ban");
+            Console.WriteLine("TÌM KIẾM HÓA ĐƠN BÁN");
             List<HoaDonBan> list = hoadonban.XemDSHoaDonBan();
 
-            Console.WriteLine("Nhap thong tin hoa don ban can tim kiem"); int tt = int.Parse(Console.ReadLine());
+            Console.WriteLine("Nhập mã hóa đơn bán cần tìm kiếm"); int tt = int.Parse(Console.ReadLine());
             int i = 0;
             for (i = 0; i < list.Count; i++)
                 if (list[i]. mahdb== tt || list[i].mahang == tt || list[i].soluong == tt || list[i].manvban == tt) break;
@@ -111,7 +127,7 @@ namespace GAS.Presenation
                     Console.WriteLine(x.mahdb +  x.manvban + x.ngayban+ "\t" + x.mahang + "\t" + x.soluong+"\t"+x.giaban+"\t"+x.kh+"\t"+x.thanhtien);
             }
 
-            else Console.WriteLine("Thong tin hoa don  nay k ton tai");
+            else Console.WriteLine("Thông tin hóa đơn bán cần tìm kiếm ko tồn tại");
         }
         public void Menu()
         {
@@ -119,16 +135,16 @@ namespace GAS.Presenation
             {
                 Console.Clear();
                 Console.WriteLine("__________________________________________________________________");
-                Console.WriteLine("|                   QUAN LY THONG TIN HOA DON                    |");
-                Console.WriteLine("|                     1.Nhap Hoa don ban                         |");
-                Console.WriteLine("|                     2.Sua Hoa don ban                          |");
-                Console.WriteLine("|                     3.Xoa hoa don ban                          |");
-                Console.WriteLine("|                     4.Hien danh sach hoa don ban               |");
-                Console.WriteLine("|                     5.Tim kiem hd ban                          |");
+                Console.WriteLine("|                    QUẢN LÝ THÔNG TIN HÓA ĐƠN BÁN               |");
+                Console.WriteLine("|                     1.Nhập hóa đơn bán                         |");
+                Console.WriteLine("|                     2.Sửa hóa đơn bán                          |");
+                Console.WriteLine("|                     3.Xóa hóa đơn bán                          |");
+                Console.WriteLine("|                     4.Hiện danh sách hóa đơn bán               |");
+                Console.WriteLine("|                     5.Tìm kiếm hóa đơn bán                     |");
                 Console.WriteLine("|                     6.Back                                     |");
                 Console.WriteLine("|________________________________________________________________|");
 
-                Console.WriteLine("Moi chon chuc nang:");
+                Console.WriteLine("Mời chọn chức năng:");
 
                 int n = int.Parse(Console.ReadLine());
                 switch (n)

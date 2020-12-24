@@ -15,29 +15,30 @@ namespace GAS.Presenation
         public void Nhap()
         {
             Console.Clear();
-            Console.WriteLine("NHAP THONG TIN NHAN VIEN");
+            Console.WriteLine("NHẬP THÔNG TIN NHÂN VIÊN");
             NhanVien nv = new NhanVien();
-            Console.Write("Nhap ma nhan vien:"); nv.manv = int.Parse(Console.ReadLine());
-            Console.Write("Nhap ten nhan vien:"); nv.tennv = Console.ReadLine();
-            Console.Write("Nhap ngay sinh :"); nv.ngaysinh = (Console.ReadLine());
-            Console.Write("Nhap gioi tinh :"); nv.gt = Console.ReadLine();
-            Console.Write("Nhap ngay vao lam viec:"); nv.ngayvaolam = Console.ReadLine();
+            Console.Write("Nhập mã nhân viên:"); nv.manv = int.Parse(Console.ReadLine());
+            Console.Write("Nhập tên nhân viên:"); nv.tennv = Console.ReadLine();
+            Console.Write("Nhập ngày sinh  :"); nv.ngaysinh = (Console.ReadLine());
+            Console.Write("Nhập giới tính :"); nv.gt = Console.ReadLine();
+            Console.Write("Nhập ngày vào làm việc:"); nv.ngayvaolam = Console.ReadLine();
 
             nhanvien.ThemNhanVien(nv);
         }
         public void Hien()
         {
             Console.Clear();
-            Console.WriteLine("\t\t\t\t HIEN THI THONG TIN NHAN VIEN ");
+            Console.WriteLine("\t\t\t\t HIỂN THỊ THÔNG TIN NHÂN VIÊN ");
             Console.WriteLine("");
+            Console.WriteLine("{0,15}|{1,25}|{2,20}|{3,10}|{4,15}","Mã Nhân Viên","Tên nhân viên","Ngày sinh","Giới tính","Ngày vào làm việc");
             List<NhanVien> list = nhanvien.XemDSNhanVien();
             foreach (var nv in list)
-                Console.WriteLine(nv.manv + "\t\t" + nv.tennv + "\t\t" + nv.ngaysinh + "\t\t" + nv.gt + "\t\t" + nv.ngayvaolam);
+                Console.WriteLine("{0,15}|{1,25}|{2,20}|{3,10}|{4,15}", nv.manv,nv.tennv , nv.ngaysinh,nv.gt , nv.ngayvaolam);
         }
         public void Sua()
         {
             Console.Clear();
-            Console.WriteLine("SUA THONG TIN KHACH HANG");
+            Console.WriteLine("SỬA THÔNG TIN NHÂN VIÊN  ");
             List<NhanVien> list = nhanvien.XemDSNhanVien();
             int manv;
             Console.Write("Nhap ma nhan vien can sua:");
@@ -49,13 +50,16 @@ namespace GAS.Presenation
             if (i < list.Count)
             {
                 NhanVien nv = new NhanVien(list[i]);
-                Console.Write("Nhap ma nhan vien moi:");
-                int mas = int.Parse(Console.ReadLine());
-                if (mas > 0) nv.manv = mas;
-                Console.Write("Nhap ho ten nhan vien moi:");
-                string ten = Console.ReadLine();
+                Console.Write("Nhap lai tên nhân viên:");
+                string ten= Console.ReadLine();
                 if (!string.IsNullOrEmpty(ten)) nv.tennv = ten;
-                Console.Write("Nhap lai ngay vao lam viec:");
+                Console.Write("Nhập ngày sinh mới:");
+                string ns = Console.ReadLine();
+                if (!string.IsNullOrEmpty(ns)) nv.ngaysinh = ns;
+                Console.Write("Nhập lại  giới tính:");
+                string gtinh = Console.ReadLine();
+                if (!string.IsNullOrEmpty(gtinh)) nv.gt= gtinh;
+                Console.Write("Nhập lại ngày vào làm việc:");
                 string nlv = Console.ReadLine();
                 if (!string.IsNullOrEmpty(nlv)) nv.ngayvaolam = nlv;
 
@@ -70,10 +74,10 @@ namespace GAS.Presenation
         public void Xoa()
         {
             Console.Clear();
-            Console.WriteLine("Xóa THÔNG TIN NHAN VIEN");
+            Console.WriteLine("XÓA THÔNG TIN NHÂN VIÊN ");
             List<NhanVien> list = nhanvien.XemDSNhanVien();
             int manv;
-            Console.Write("Nhập mã nhan vien cần xóa:");
+            Console.Write("Nhập mã nhân viên  cần xóa:");
             manv = int.Parse(Console.ReadLine());
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -91,17 +95,17 @@ namespace GAS.Presenation
             }
             else
             {
-                Console.WriteLine("Không tồn tại mã nhan vien này");
+                Console.WriteLine("Không tồn tại mã nhân viên này");
             }
 
         }
         public void TimKiem()
         {
             Console.Clear();
-            Console.WriteLine("Tim kiem  nhan vien");
+            Console.WriteLine("TÌM KIẾM NHÂN VIÊN ");
             List<NhanVien> list = nhanvien.XemDSNhanVien();
 
-            Console.WriteLine("Nhap thong tin nhan vien can tim kiem"); string tt = Console.ReadLine();
+            Console.WriteLine("Nhập Tên nhân viên cần tìm kiếm"); string tt = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; i++)
                 if (list[i].tennv == tt || list[i].ngaysinh == tt || list[i].gt == tt || list[i].ngayvaolam == tt) break;
@@ -113,7 +117,7 @@ namespace GAS.Presenation
                     Console.WriteLine(x.manv + "\t" + x.tennv + "\t" + x.ngaysinh + "\t" + x.gt + "\t" + x.ngayvaolam);
             }
 
-            else Console.WriteLine("Thong tin nhan vien  nay k ton tai");
+            else Console.WriteLine("Thông tin nhân viên này không tồn tại");
         }
         public void Menu()
         {
@@ -122,16 +126,16 @@ namespace GAS.Presenation
                 Console.Clear();
                 Console.WriteLine("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t");
                 Console.WriteLine("\t\t\t\t|---------------------------------------------------|");
-                Console.WriteLine("\t\t\t\t|         QUAN LY THONG TIN NHAN VIEN               |");
-                Console.WriteLine("\t\t\t\t|               1.Nhap nhan vien                    |");
-                Console.WriteLine("\t\t\t\t|               2.Sua nhan vien                     |");
-                Console.WriteLine("\t\t\t\t|               3.Xoa nhan vien                     |");
-                Console.WriteLine("\t\t\t\t|               4.Hien danh sach                    |");
-                Console.WriteLine("\t\t\t\t|               5.Tim kiem                          |");
+                Console.WriteLine("\t\t\t\t|         QUẢN LÝ THÔNG TIN NHÂN VIÊN               |");
+                Console.WriteLine("\t\t\t\t|               1.Nhập nhân viên                    |");
+                Console.WriteLine("\t\t\t\t|               2.Sửa nhân viên                     |");
+                Console.WriteLine("\t\t\t\t|               3.Xóa nhân viên                     |");
+                Console.WriteLine("\t\t\t\t|               4.Hiện danh sách                    |");
+                Console.WriteLine("\t\t\t\t|               5.Tìm kiếm                          |");
                 Console.WriteLine("\t\t\t\t|               6.Back                              |");
                 Console.WriteLine("\t\t\t\t|---------------------------------------------------|");
 
-                Console.WriteLine("Moi chon chuc nang:");
+                Console.WriteLine("Mời chọn chức năng:");
 
                 int n = int.Parse(Console.ReadLine());
                 switch (n)

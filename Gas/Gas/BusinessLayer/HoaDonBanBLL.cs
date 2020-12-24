@@ -55,7 +55,7 @@ namespace Gas.BusinessLayer
             if (i < list.Count)
             {
                 list.RemoveAt(i);
-                
+                list.Add(HDB);
                 HDBDA.Update(list);
             }
             else

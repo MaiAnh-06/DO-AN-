@@ -34,35 +34,11 @@ namespace Gas.DataAccessLayer
             fread6.Close();
             return list;
         }
-        ////Lấy mã hóa đơn bán của bản ghi cuối cùng phục vụ cho đánh mã tự động
-        //public int mahdb
-        //{
-        //    get
-        //    {
-        //        StreamReader fread6 = File.OpenText(txtfile6);
-        //        string s = fread6.ReadLine();
-        //        string tmp = "";
-        //        while (s != null)
-        //        {
-        //            if (s != "")
-        //                tmp = s;
-        //            s = fread6.ReadLine();
-        //        }
-        //        fread6.Close();
-        //        if (tmp == "")
-        //            return 0;
-        //        else
-        //        {
-                    
-        //            string[] a = tmp.Split('\t');
-        //            return int.Parse(a[0]);
-        //        }
-        //    }
-        //}
+        
         //Chèn một bản ghi hóa đơn bán vào tệp
         public void Insert(HoaDonBan hdb)
         {
-            int mahdban = hdb.mahdb + 1;
+            int mahdban = hdb.mahdb ;
             StreamWriter fwrite = File.AppendText(txtfile6);
             fwrite.WriteLine();
             fwrite.Write(mahdban + "\t" + hdb.manvban + "\t" + hdb.ngayban + "\t" + hdb.mahang + "\t" + hdb.soluong + "\t" + hdb.giaban + "\t" + hdb.kh + "\t" + hdb.thanhtien);

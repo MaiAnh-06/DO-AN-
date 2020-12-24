@@ -56,7 +56,7 @@ namespace GAS.BusinessLayer
             if (i < list.Count)
             {
                 list.RemoveAt(i);
-                
+                list.Add(HDN);
                 HDNDA.Update(list);
             }
             else

@@ -85,7 +85,7 @@ namespace Gas.Entites
             }
             set
             {
-                if (value.ToLower() == "nam" || value.ToLower() == "nữ")
+                if (value.ToLower() == "nam" || value.ToLower() == "nu")
                     GioiTinh = value;
             }
         }

@@ -29,40 +29,7 @@ namespace GAS.BusinessLayer
                 throw new Exception("Du lieu sai!");
         }
 
-        //public bool KiemTra(int mahh)
-        //{
-        //    List<HangHoa> list = HHDA.GetData();
-        //    Node<HangHoa> NB = ;
-        //    bool kt = false;
-        //    while (NB != null)
-        //    {
-        //        if (NB.Info.mahh == mahh)
-        //        {
-        //            kt = true;
-        //            break;
-        //        }
-        //        else
-        //            NB = NB.Link;
-        //    }
-        //    return kt;
-        //}
-        //public bool KiemTraTen(string tenhh)
-        //{
-        //    List<HangHoa> list = HHDA.GetData();
-        //    Node<HangHoa> NB = list.L;
-        //    bool kt = false;
-        //    while (NB != null)
-        //    {
-        //        if (NB.Info.tenhang == tenhh)
-        //        {
-        //            kt = true;
-        //            break;
-        //        }
-        //        else
-        //            NB = NB.Link;
-        //    }
-        //    return kt;
-        //}
+        
         public void XoaHangHoa(int mahh)
         {
             int i;
@@ -88,7 +55,7 @@ namespace GAS.BusinessLayer
             if (i < list.Count)
             {
                 list.RemoveAt(i);
-                HHDA.Insert(HH);
+                list.Add(HH);
                 HHDA.Update(list);
             }
             else

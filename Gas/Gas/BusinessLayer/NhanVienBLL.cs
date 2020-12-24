@@ -54,6 +54,7 @@ namespace Gas.BusinessLayer
             if (i < list.Count)
             {
                 list.RemoveAt(i);
+                list.Add(nv);
                 NVDA.Update(list);
             }
             else

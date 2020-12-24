@@ -16,30 +16,35 @@ namespace GAS.Presenation
         public void Nhap()
         {
             Console.Clear();
-            Console.WriteLine("NHAP THONG TIN NHA CUNG CAP");
+            Console.WriteLine("NHẬP THÔNG TIN NHÀ CUNG CẤP ");
             NCC ncc = new NCC();
-            Console.Write("Nhap ma nha cung cap:"); ncc.mancc= int.Parse(Console.ReadLine());
-            Console.Write("Nhap ten nha cung cap:"); ncc.tenncc= Console.ReadLine();
-            Console.Write("Nhap dia chi nha cung cap:"); ncc.diachi= (Console.ReadLine());
-            Console.Write("Nhap so dien thoai :"); ncc.sdt= (Console.ReadLine());
+            Console.Write("Nhập mã nhà cung cấp:"); ncc.mancc= int.Parse(Console.ReadLine());
+            Console.Write("Nhập tên nhà cung cấp:"); ncc.tenncc= Console.ReadLine();
+            Console.Write("Nhập địa chỉ nhà cung cấp:"); ncc.diachi= (Console.ReadLine());
+            Console.Write("Nhập số điện thoại  :"); ncc.sdt= (Console.ReadLine());
 
             nhacc.ThemNhaCC(ncc);
         }
         public void Hien()
         {
             Console.Clear();
-            Console.WriteLine("HIEN THI THONG TIN NHA CUNG CAP");
+            Console.WriteLine("\t\t\tHIỂN THỊ THÔNG TIN NHÀ CUNG CẤP");
+            Console.WriteLine();
+            Console.WriteLine("{0,10}|{1,25}|{2,20}|{3,15}", "Mã NCC", "TenNCC", "Dia chi", "So dien thoai");
             List<NCC> list = nhacc.XemDSNhaCC();
             foreach (var ncc in list)
-                Console.WriteLine(ncc.mancc + "\t" + ncc.tenncc + "\t" + ncc.diachi + "\t" + ncc.sdt);
+                Console.WriteLine("{0,10}|{1,25}|{2,20}|{3,15}", ncc.mancc, ncc.tenncc, ncc.diachi, ncc.sdt);
+           
+
+
         }
         public void Sua()
         {
             Console.Clear();
-            Console.WriteLine("SUA THONG TIN NHA CUNG CAP");
+            Console.WriteLine("\t\tSỬA THÔNG TIN NHÀ CUNG CẤP");
             List<NCC> list = nhacc.XemDSNhaCC();
             int mancc;
-            Console.Write("Nhap ma ncc can sua:");
+            Console.Write("Nhập mã nhà cung cấp cần sửa:");
             mancc= int.Parse(Console.ReadLine());
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -48,25 +53,32 @@ namespace GAS.Presenation
             if (i < list.Count)
             {
                 NCC ncc = new NCC(list[i]);
-                Console.Write("Nhap ten hang moi:");
+                Console.Write("Nhập tên nhà cung cấp mới :");
                 string tenncc = Console.ReadLine();
                 if (!string.IsNullOrEmpty(tenncc)) ncc.tenncc = tenncc;
-                Console.Write("Dia chi moi:");
+                Console.Write("Địa chỉ mới:");
                 string dc = Console.ReadLine();
+                if (!string.IsNullOrEmpty(dc)) ncc.diachi = dc;
+                Console.Write("Số điện thoại mới:");
+                string sodt = Console.ReadLine();
+                if (!string.IsNullOrEmpty(sodt)) ncc.sdt = sodt;
+                nhacc.SuaNhaCC(ncc);
+
+
 
             }
             else
             {
-                Console.WriteLine("Khong ton tai ma  hang nay");
+                Console.WriteLine("Không tồn tại nhà cung cấp này");
             }
         }
         public void Xoa()
         {
             Console.Clear();
-            Console.WriteLine("Xóa THÔNG TIN NHA CUNG CAP");
+            Console.WriteLine("XÓA THÔNG TIN NHÀ CUNG CẤP");
             List<NCC> list = nhacc.XemDSNhaCC();
             int mancc;
-            Console.Write("Nhập mã nha cung cap cần xóa:");
+            Console.Write("Nhập mã nhà cung cấp cần xóa:");
             mancc = int.Parse(Console.ReadLine());
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -84,17 +96,17 @@ namespace GAS.Presenation
             }
             else
             {
-                Console.WriteLine("Không tồn tại mã nhan vien này");
+                Console.WriteLine("Không tồn tại mã nhà cung cấp này");
             }
 
         }
         public void TimKiem()
         {
             Console.Clear();
-            Console.WriteLine("TIM KIEM NHA CUNG CAP");
+            Console.WriteLine("TÌM KIẾM NHÀ CUNG CẤP");
             List<NCC> list = nhacc.XemDSNhaCC();
 
-            Console.WriteLine("Nhap thong tin nha cung cap can tim kiem"); string tt = Console.ReadLine();
+            Console.WriteLine("Nhập tên nhà cung cấp cần tìm kiếm"); string tt = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; i++)
                 if (list[i].tenncc == tt || list[i].diachi == tt || list[i].sdt== tt) break;
@@ -106,7 +118,7 @@ namespace GAS.Presenation
                     Console.WriteLine(x.mancc + "\t" + x.tenncc + "\t" + x.diachi + "\t" + x.sdt+ "\t" );
             }
 
-            else Console.WriteLine("Thong tin nha cung cap k ton tai");
+            else Console.WriteLine("Thông tin nhà cung cấp không tồn tại");
         }
         public void Menu()
         {
@@ -114,15 +126,15 @@ namespace GAS.Presenation
             {
                 Console.Clear();
                 Console.WriteLine("\t\t\t\t\t****************************************************");
-                Console.WriteLine("\t\t\t\t\t*          QUAN LY THONG TIN NHA CUNG CAP          *");
-                Console.WriteLine("\t\t\t\t\t*              1.Nhap nha cung cap                 *");
-                Console.WriteLine("\t\t\t\t\t*              2.Sua nha cung cap                  *");
-                Console.WriteLine("\t\t\t\t\t*              3.Xoa nha cung cap                  *");
-                Console.WriteLine("\t\t\t\t\t*              4.Hien danh sach nha cung cap       *");
-                Console.WriteLine("\t\t\t\t\t*              5.Tim kiem                          *");
+                Console.WriteLine("\t\t\t\t\t*          QUẢN LÝ THÔNG TIN NHÀ CUNG CẤP          *");
+                Console.WriteLine("\t\t\t\t\t*              1.Nhập nhà cung cấp                 *");
+                Console.WriteLine("\t\t\t\t\t*              2.Sửa nhà cung cấp                  *");
+                Console.WriteLine("\t\t\t\t\t*              3.Xóa nhà cung cấp                  *");
+                Console.WriteLine("\t\t\t\t\t*              4.Hiện danh sách nhà cung cấp       *");
+                Console.WriteLine("\t\t\t\t\t*              5.Tìm kiếm                          *");
                 Console.WriteLine("\t\t\t\t\t*              6.Back                              *");
                 Console.WriteLine("\t\t\t\t\t****************************************************");
-                Console.WriteLine("Moi chon chuc nang:");
+                Console.WriteLine("Mời chọn chức năng:");
 
                 int n = int.Parse(Console.ReadLine());
                 switch (n)

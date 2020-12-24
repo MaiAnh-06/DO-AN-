@@ -32,9 +32,10 @@ namespace GAS.Presenation
             Console.WriteLine();
             Console.WriteLine("\t\t\t\t\t HIỂN THỊ THÔNG TIN HÀNG HÓA ");
             Console.WriteLine();
+            Console.WriteLine("{0,15}|{1,30}|{2,15}|{3,15}", "Mã hàng", "Tên Hàng ", "SL Nhập ", "SL Hiện có");
             List<HangHoa> list = hanghoa.XemDSHangHoa();
             foreach (var hh in list)
-                Console.WriteLine( "\t\t\t" + hh.mahh + "\t\t" + hh.tenhang + "\t\t" + hh.slnhapve + "\t\t" + hh.slhienco);
+                Console.WriteLine("{0,15}|{1,30}|{2,15}|{3,15}", hh.mahh  ,hh.tenhang   ,hh.slnhapve , hh.slhienco);
         }
         public void Sua()
         {
@@ -56,11 +57,15 @@ namespace GAS.Presenation
                 if (!string.IsNullOrEmpty(tenhang)) sp.tenhang = tenhang;
                 Console.Write("\t\tSố lượng nhập về :");
                 int SL = int.Parse(Console.ReadLine());
-
+                if (SL>0) sp.slnhapve = SL;
+                Console.Write("\t\tSố lượng hiện có :");
+                int SLhc = int.Parse(Console.ReadLine());
+                if (SLhc > 0) sp.slhienco= SLhc;
+                hanghoa.SuaHangHoa(sp);
             }
             else
             {
-                Console.WriteLine("Khong ton tai ma  hang nay");
+                Console.WriteLine("Không tồn tại mã hàng này");
             }
         }
         public void Xoa()

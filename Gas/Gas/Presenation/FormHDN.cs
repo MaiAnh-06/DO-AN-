@@ -16,34 +16,36 @@ namespace GAS.Presenation
         public void Nhap()
         {
             Console.Clear();
-            Console.WriteLine("NHAP THONG TIN HOA DON NHAP");
+            Console.WriteLine("NHẬP THÔNG TIN HÓA ĐƠN NHẬP");
             HoaDonNhap hdn = new HoaDonNhap();
-            Console.Write("Nhap ma hoa don nhap:"); hdn.mahdn = int.Parse(Console.ReadLine());
-            Console.Write("Nhap ma nha cung cap :"); hdn.mancc = int.Parse(Console.ReadLine());
-            Console.Write("Nhap nguoi giao :"); hdn.nvgiao = Console.ReadLine();
-            Console.Write("Nhap ma nhan vien nhan  :"); hdn.manvnhan = int.Parse(Console.ReadLine());
-            Console.Write("Nhap ngay nhan :"); hdn.ngaynhan = Console.ReadLine();
-            Console.Write(" Nhap ma hang  :"); hdn.mahang = int.Parse(Console.ReadLine());
-            Console.Write("Nhap so luong :"); hdn.soluong= int.Parse(Console.ReadLine());
-            Console.Write(" Gia nhap :"); hdn.gianhap = double.Parse(Console.ReadLine());
+            Console.Write("Nhập mã hóa đơn nhập:"); hdn.mahdn = int.Parse(Console.ReadLine());
+            Console.Write("Nhập mã nhà cung cấp  :"); hdn.mancc = int.Parse(Console.ReadLine());
+            Console.Write("Nhập người giao:"); hdn.nvgiao = Console.ReadLine();
+            Console.Write("Nhập mã nhân viên nhận  :"); hdn.manvnhan = int.Parse(Console.ReadLine());
+            Console.Write("Nhập ngày nhận :"); hdn.ngaynhan = Console.ReadLine();
+            Console.Write("Nhập mã hàng  :"); hdn.mahang = int.Parse(Console.ReadLine());
+            Console.Write("Nhập số lượng  :"); hdn.soluong= int.Parse(Console.ReadLine());
+            Console.Write(" Giá nhập:"); hdn.gianhap = double.Parse(Console.ReadLine());
 
             hoadonnhap.ThemHoaDonNhap(hdn);
         }
         public void Hien()
         {
             Console.Clear();
-            Console.WriteLine("HIEN THI THONG TIN HOA DON NHAP");
+            Console.WriteLine("t\t\t\tHIỂN THỊ THÔNG TIN HÓA ĐƠN NHẬP");
+            Console.WriteLine();
+            Console.WriteLine("{0,10}|{1,10}|{2,15}|{3,10}|{4,10}|{5,10}|{6,10}|{7,10}|{8,10}", "Mã HDN", "Mã NCC", "NV giao", "Mã NV nhận", "Ngày nhận", "Mã Hàng", "Số lượng", "Giá Nhập", "Thành tiền");
             List<HoaDonNhap> list = hoadonnhap.XemDSHoaDonNhap();
             foreach (var hdn in list)
-                Console.WriteLine(hdn.mahdn + "\t" + hdn.mancc + "\t" + hdn.nvgiao + "\t" + hdn.manvnhan + "\t" + hdn.ngaynhan + "\t" + hdn.mahang + "\t" + hdn.soluong + "\t" + hdn.gianhap + "\t" + hdn.thanhtien);
+                Console.WriteLine("{0,10}|{1,10}|{2,15}|{3,10}|{4,10}|{5,10}|{6,10}|{7,10}|{8,10}", hdn.mahdn , hdn.mancc , hdn.nvgiao ,hdn.manvnhan , hdn.ngaynhan ,hdn.mahang , hdn.soluong, hdn.gianhap , hdn.thanhtien);
         }
         public void Sua()
         {
             Console.Clear();
-            Console.WriteLine("SUA THONG TIN HOA DON Nhap");
+            Console.WriteLine("SỬA HÓA ĐƠN NHẬP");
             List<HoaDonNhap> list = hoadonnhap.XemDSHoaDonNhap();
             int mahdn;
-            Console.Write("Nhap ma hang don can sua :");
+            Console.Write("Nhập mã hóa đơn nhập cần sửa :");
             mahdn = int.Parse(Console.ReadLine());
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -51,12 +53,30 @@ namespace GAS.Presenation
 
             if (i < list.Count)
             {
-                HoaDonNhap mh = new HoaDonNhap(list[i]);
-                Console.Write("Nhap ten hang can sua:");
-                int mahang = int.Parse(Console.ReadLine());
+                HoaDonNhap hd2 = new HoaDonNhap(list[i]);
+                Console.Write("Nhập mã nhà cung cấp :");
+                int nhacc = int.Parse(Console.ReadLine());
+                if (nhacc > 0) hd2.mancc = nhacc;
+                Console.Write("Nhập nhân viên giao :");
+                string nvg = Console.ReadLine();
+                if (!string.IsNullOrEmpty(nvg)) hd2.nvgiao = nvg;
+                Console.Write("Nhập mã nhân viên nhận mới  :");
+                int nvn= int.Parse(Console.ReadLine());
+                if (nvn > 0) hd2.manvnhan = nvn;
+                Console.Write("Nhập ngày nhận mới:");
+                string nn= Console.ReadLine();
+                if (!string.IsNullOrEmpty(nn)) hd2.ngaynhan= nn;
+                Console.Write("Nhập mã hàng :");
+                int mah= int.Parse(Console.ReadLine());
+                if (mah > 0) hd2.mahang = mah;
 
-                Console.Write("So luong nhap ve:");
+                Console.Write("Số lượng mới :");
                 int SL = int.Parse(Console.ReadLine());
+                if (SL > 0) hd2.soluong = SL;
+                Console.Write("Nhập giá nhập mới:");
+                int gn = int.Parse(Console.ReadLine());
+                if (gn > 0) hd2.gianhap = gn;
+                hoadonnhap.SuaHoaDonNhap(hd2);
 
             }
             else
@@ -67,10 +87,10 @@ namespace GAS.Presenation
         public void Xoa()
         {
             Console.Clear();
-            Console.WriteLine("XOA THÔNG TIN HOA DON NHAP");
+            Console.WriteLine("XÓA THÔNG TIN HÓA ĐƠN NHẬP");
             List<HoaDonNhap> list = hoadonnhap.XemDSHoaDonNhap();
             int mahdn;
-            Console.Write("Nhập mã nhan vien cần xóa:");
+            Console.Write("Nhập mã hóa đơn nhập cần xóa:");
             mahdn = int.Parse(Console.ReadLine());
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -88,17 +108,17 @@ namespace GAS.Presenation
             }
             else
             {
-                Console.WriteLine("Không tồn tại mã nhan vien này");
+                Console.WriteLine("Không tồn tại mã hóa đơn  này");
             }
 
         }
         public void TimKiem()
         {
             Console.Clear();
-            Console.WriteLine("Tim kiem hoa don nhap");
+            Console.WriteLine("TÌM KIẾM HÓA ĐƠN NHẬP");
             List<HoaDonNhap> list = hoadonnhap.XemDSHoaDonNhap();
 
-            Console.WriteLine("Nhap thong tin nhan vien can tim kiem"); int tt = int.Parse(Console.ReadLine());
+            Console.WriteLine("Nhập thông tin hóa đơn nhập cần tìm kiếm:"); int tt = int.Parse(Console.ReadLine());
             int i = 0;
             for (i = 0; i < list.Count; i++)
                 if (list[i].mahdn == tt || list[i].mancc == tt || list[i].manvnhan == tt || list[i].mahang == tt) break;
@@ -119,15 +139,15 @@ namespace GAS.Presenation
             {
                 Console.Clear();
                 Console.WriteLine("+ + + + + + + + + + + + + + + + + + + + + + + +");
-                Console.WriteLine("+        QUAN LY THONG TIN HOA DON NHAP       +");
-                Console.WriteLine("+         1.Nhap Hoa don                      +");
-                Console.WriteLine("+         2.Sua Hoa don                       +");
-                Console.WriteLine("+         3.Xoa hoa don                       +");
-                Console.WriteLine("+         4.Hien danh sach                    +");
-                Console.WriteLine("+         5.Tim kiem                          +");
+                Console.WriteLine("+        QUẢN LÝ THÔNG TIN HÓA ĐƠN NHẬP       +");
+                Console.WriteLine("+         1.Nhập hóa đơn                      +");
+                Console.WriteLine("+         2.Sửa hóa đơn                       +");
+                Console.WriteLine("+         3.Xóa hóa đơn                       +");
+                Console.WriteLine("+         4.Hiện danh sách                    +");
+                Console.WriteLine("+         5.Tìm kiếm                          +");
                 Console.WriteLine("+         6.Back                              +");
                 Console.WriteLine("+ + + + + + + + + + + + + + + + + + + + + + + +");
-                Console.WriteLine("Moi chon chuc nang:");
+                Console.WriteLine("Mời chọn chức năng:");
 
 
                 int n = int.Parse(Console.ReadLine());
