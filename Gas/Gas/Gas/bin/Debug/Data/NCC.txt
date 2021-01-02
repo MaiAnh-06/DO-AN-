@@ -1,5 +1,0 @@
-3217	Total Gas	Ha Noi	0987654239
-3098	Sai Gon Petro	Hai Phong	0912346540
-3873	Petro Viet Nam	Ha Noi	0345678012
-3570	Huong Thao	Hai Duong	0912345670
-3655	Minh Thao	Hai Duong	0912345678
