@@ -16,7 +16,7 @@ namespace GAS.Presenation
         public void Nhap()
         {
             Console.Clear();
-            Console.WriteLine("NHẬP THÔNG TIN HÓA ĐƠN NHẬP");
+            Console.WriteLine("NHẬP THÔNG TIN  HÓA ĐƠN NHẬP ");
             HoaDonNhap hdn = new HoaDonNhap();
             Console.Write("Nhập mã hóa đơn nhập:"); hdn.mahdn = int.Parse(Console.ReadLine());
             Console.Write("Nhập mã nhà cung cấp  :"); hdn.mancc = int.Parse(Console.ReadLine());
@@ -32,7 +32,7 @@ namespace GAS.Presenation
         public void Hien()
         {
             Console.Clear();
-            Console.WriteLine("t\t\t\tHIỂN THỊ THÔNG TIN HÓA ĐƠN NHẬP");
+            Console.WriteLine("t\t\t\tHIỂN THỊ THÔNG TIN  HÓA ĐƠN NHẬP");
             Console.WriteLine();
             Console.WriteLine("{0,10}|{1,10}|{2,15}|{3,10}|{4,10}|{5,10}|{6,10}|{7,10}|{8,10}", "Mã HDN", "Mã NCC", "NV giao", "Mã NV nhận", "Ngày nhận", "Mã Hàng", "Số lượng", "Giá Nhập", "Thành tiền");
             List<HoaDonNhap> list = hoadonnhap.XemDSHoaDonNhap();
@@ -138,15 +138,15 @@ namespace GAS.Presenation
             do
             {
                 Console.Clear();
-                Console.WriteLine("+ + + + + + + + + + + + + + + + + + + + + + + +");
-                Console.WriteLine("+        QUẢN LÝ THÔNG TIN HÓA ĐƠN NHẬP       +");
-                Console.WriteLine("+         1.Nhập hóa đơn                      +");
-                Console.WriteLine("+         2.Sửa hóa đơn                       +");
-                Console.WriteLine("+         3.Xóa hóa đơn                       +");
-                Console.WriteLine("+         4.Hiện danh sách                    +");
-                Console.WriteLine("+         5.Tìm kiếm                          +");
-                Console.WriteLine("+         6.Back                              +");
-                Console.WriteLine("+ + + + + + + + + + + + + + + + + + + + + + + +");
+                Console.WriteLine("\t\t\t+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +");
+                Console.WriteLine("\t\t\t+                          QUẢN LÝ THÔNG TIN HÓA ĐƠN NHẬP                           +");
+                Console.WriteLine("\t\t\t+                               1.Nhập hóa đơn                                      +");
+                Console.WriteLine("\t\t\t+                               2.Sửa hóa đơn                                       +");
+                Console.WriteLine("\t\t\t+                               3.Xóa hóa đơn                                       +");
+                Console.WriteLine("\t\t\t+                               4.Hiện danh sách                                    +");
+                Console.WriteLine("\t\t\t+                               5.Tìm kiếm                                          +");
+                Console.WriteLine("\t\t\t+                               6.Back                                              +");
+                Console.WriteLine("\t\t\t+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +");
                 Console.WriteLine("Mời chọn chức năng:");
 
 

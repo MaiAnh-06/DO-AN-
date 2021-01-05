@@ -35,8 +35,6 @@ namespace GAS.Presenation
             foreach (var ncc in list)
                 Console.WriteLine("{0,10}|{1,25}|{2,20}|{3,15}", ncc.mancc, ncc.tenncc, ncc.diachi, ncc.sdt);
            
-
-
         }
         public void Sua()
         {

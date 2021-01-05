@@ -16,7 +16,7 @@ namespace GAS.Presenation
         public void Nhap()
         {
             Console.Clear();
-            Console.WriteLine("NHẬP THÔNG TIN HÓA ĐƠN BÁN");
+            Console.WriteLine("NHẬP THÔNG TIN  HÓA ĐƠN BÁN ");
             HoaDonBan hdb = new HoaDonBan();
             Console.Write("Nhập mã hóa đơn bán:"); hdb.mahdb = int.Parse(Console.ReadLine());
             Console.Write("Nhap mã nhân viên bán :"); hdb.manvban = int.Parse(Console.ReadLine());
@@ -105,7 +105,7 @@ namespace GAS.Presenation
             }
             else
             {
-                Console.WriteLine("Không tồn tại mã hoa don này");
+                Console.WriteLine("Không tồn tại mã  này");
             }
 
         }
@@ -115,7 +115,7 @@ namespace GAS.Presenation
             Console.WriteLine("TÌM KIẾM HÓA ĐƠN BÁN");
             List<HoaDonBan> list = hoadonban.XemDSHoaDonBan();
 
-            Console.WriteLine("Nhập mã hóa đơn bán cần tìm kiếm"); int tt = int.Parse(Console.ReadLine());
+            Console.WriteLine("Nhập thông tin  hóa đơn bán cần tìm kiếm"); int tt = int.Parse(Console.ReadLine());
             int i = 0;
             for (i = 0; i < list.Count; i++)
                 if (list[i]. mahdb== tt || list[i].mahang == tt || list[i].soluong == tt || list[i].manvban == tt) break;
@@ -134,15 +134,15 @@ namespace GAS.Presenation
             do
             {
                 Console.Clear();
-                Console.WriteLine("__________________________________________________________________");
-                Console.WriteLine("|                    QUẢN LÝ THÔNG TIN HÓA ĐƠN BÁN               |");
-                Console.WriteLine("|                     1.Nhập hóa đơn bán                         |");
-                Console.WriteLine("|                     2.Sửa hóa đơn bán                          |");
-                Console.WriteLine("|                     3.Xóa hóa đơn bán                          |");
-                Console.WriteLine("|                     4.Hiện danh sách hóa đơn bán               |");
-                Console.WriteLine("|                     5.Tìm kiếm hóa đơn bán                     |");
-                Console.WriteLine("|                     6.Back                                     |");
-                Console.WriteLine("|________________________________________________________________|");
+                Console.WriteLine("\t\t\t__________________________________________________________________");
+                Console.WriteLine("\t\t\t|                  QUẢN LÝ THÔNG TIN HÓA ĐƠN BÁN CHI TIẾT        |");
+                Console.WriteLine("\t\t\t|                     1.Nhập hóa đơn bán                         |");
+                Console.WriteLine("\t\t\t|                     2.Sửa hóa đơn bán                          |");
+                Console.WriteLine("\t\t\t|                     3.Xóa hóa đơn bán                          |");
+                Console.WriteLine("\t\t\t|                     4.Hiện danh sách hóa đơn bán               |");
+                Console.WriteLine("\t\t\t|                     5.Tìm kiếm hóa đơn bán                     |");
+                Console.WriteLine("\t\t\t|                     6.Back                                     |");
+                Console.WriteLine("\t\t\t|________________________________________________________________|");
 
                 Console.WriteLine("Mời chọn chức năng:");
 

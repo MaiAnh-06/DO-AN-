@@ -1,7 +1,7 @@
 1243	gas du lich	100	50
 1456	gas Shell	150	100
-
 1567	gas công nghiệp	110	50
 1890	gas  Petrolimex	200	100
 1634	Gas Total	180	80
-1234	gas du lich	123	120
+
+1236	gas cong nghiep	123	789

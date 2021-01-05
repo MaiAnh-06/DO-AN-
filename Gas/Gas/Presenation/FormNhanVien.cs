@@ -41,7 +41,7 @@ namespace GAS.Presenation
             Console.WriteLine("SỬA THÔNG TIN NHÂN VIÊN  ");
             List<NhanVien> list = nhanvien.XemDSNhanVien();
             int manv;
-            Console.Write("Nhap ma nhan vien can sua:");
+            Console.Write("Nhập mã nhân viên cần sửa:");
             manv = int.Parse(Console.ReadLine());
             int i = 0;
             for (i = 0; i < list.Count; ++i)

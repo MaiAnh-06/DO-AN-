@@ -23,11 +23,12 @@ namespace GAS
                 Console.WriteLine("\t\t\t\t*                 1.Quản lý Hàng hóa                       *\t\t\t");
                 Console.WriteLine("\t\t\t\t*                 2.Quản lý Nhà cung cấp                   *\t\t\t");
                 Console.WriteLine("\t\t\t\t*                 3.Quản lý Nhân viên                      *\t\t\t");
-                Console.WriteLine("\t\t\t\t*                 4.Quản lý Hóa đơn Nhập                   *\t\t\t");
-                Console.WriteLine("\t\t\t\t*                 5.Quản lý Hóa đơn Bán                    *\t\t\t");
-                Console.WriteLine("\t\t\t\t*                 6.Kết Thúc                               *\t\t\t");
+                Console.WriteLine("\t\t\t\t*                 4.Quản lý  Hóa đơn Nhập                  *\t\t\t");
+                Console.WriteLine("\t\t\t\t*                 5.Quản lý  Hóa đơn Bán                   *\t\t\t");
+                Console.WriteLine("\t\t\t\t*                 6.Quản lý  Khách hàng                   *\t\t\t");
+                Console.WriteLine("\t\t\t\t*                 7.Kết Thúc                               *\t\t\t");
                 Console.WriteLine("\t\t\t\t************************************************************\t\t\t");
-                Console.WriteLine("Chon thong tin:");
+                Console.WriteLine("Chọn thông tin:");
                 int n = int.Parse(Console.ReadLine());
                 switch (n)
                 {
@@ -53,9 +54,14 @@ namespace GAS
                         frm5.Menu();
                         break;
                     case 6:
+                        FormKhachHang frm6 = new FormKhachHang();
+                        frm6.Menu();
                         break;
-                        
-                   
+                    case 7:
+                        break;
+                    
+
+
                 }
             } while (true);
         }

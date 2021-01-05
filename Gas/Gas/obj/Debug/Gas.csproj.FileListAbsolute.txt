@@ -5,10 +5,24 @@ E:\ĐỒ ÁN 1\DOAN1\Gas\Gas\obj\Debug\Gas.csprojAssemblyReference.cache
 E:\ĐỒ ÁN 1\DOAN1\Gas\Gas\obj\Debug\Gas.csproj.CoreCompileInputs.cache
 E:\ĐỒ ÁN 1\DOAN1\Gas\Gas\obj\Debug\Gas.exe
 E:\ĐỒ ÁN 1\DOAN1\Gas\Gas\obj\Debug\Gas.pdb
-E:\GIT-HUB\DO-AN-\Gas\Gas\bin\Debug\Gas.exe.config
-E:\GIT-HUB\DO-AN-\Gas\Gas\bin\Debug\Gas.exe
-E:\GIT-HUB\DO-AN-\Gas\Gas\bin\Debug\Gas.pdb
-E:\GIT-HUB\DO-AN-\Gas\Gas\obj\Debug\Gas.csprojAssemblyReference.cache
-E:\GIT-HUB\DO-AN-\Gas\Gas\obj\Debug\Gas.csproj.CoreCompileInputs.cache
-E:\GIT-HUB\DO-AN-\Gas\Gas\obj\Debug\Gas.exe
-E:\GIT-HUB\DO-AN-\Gas\Gas\obj\Debug\Gas.pdb
+D:\DOAN1\Gas\Gas\obj\Debug\Gas.csprojAssemblyReference.cache
+D:\DOAN1\Gas\Gas\obj\Debug\Gas.csproj.CoreCompileInputs.cache
+D:\DOAN1\Gas\Gas\obj\Debug\Gas.exe
+D:\DOAN1\Gas\Gas\obj\Debug\Gas.pdb
+D:\DOAN1\Gas\Gas\bin\Debug\Gas.exe.config
+D:\DOAN1\Gas\Gas\bin\Debug\Gas.exe
+D:\DOAN1\Gas\Gas\bin\Debug\Gas.pdb
+E:\DOAN1\Gas\Gas\bin\Debug\Gas.exe.config
+E:\DOAN1\Gas\Gas\bin\Debug\Gas.exe
+E:\DOAN1\Gas\Gas\bin\Debug\Gas.pdb
+E:\DOAN1\Gas\Gas\obj\Debug\Gas.csprojAssemblyReference.cache
+E:\DOAN1\Gas\Gas\obj\Debug\Gas.csproj.CoreCompileInputs.cache
+E:\DOAN1\Gas\Gas\obj\Debug\Gas.exe
+E:\DOAN1\Gas\Gas\obj\Debug\Gas.pdb
+C:\Users\ASUS\Desktop\Gas\Gas\bin\Debug\Gas.exe.config
+C:\Users\ASUS\Desktop\Gas\Gas\bin\Debug\Gas.exe
+C:\Users\ASUS\Desktop\Gas\Gas\bin\Debug\Gas.pdb
+C:\Users\ASUS\Desktop\Gas\Gas\obj\Debug\Gas.csprojAssemblyReference.cache
+C:\Users\ASUS\Desktop\Gas\Gas\obj\Debug\Gas.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Gas\Gas\obj\Debug\Gas.exe
+C:\Users\ASUS\Desktop\Gas\Gas\obj\Debug\Gas.pdb
